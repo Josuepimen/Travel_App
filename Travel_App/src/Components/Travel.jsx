@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import 'animate.css';
 
 const Travel = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -7,7 +8,7 @@ const Travel = () => {
   const [images, setImages] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const UNSPLASH_ACCESS_KEY = 'zokPLsGgy9b7EiNvaEITMTw-7xrv2q6qua6mubkqjZY'; 
+  const UNSPLASH_ACCESS_KEY = 'zokPLsGgy9b7EiNvaEITMTw-7xrv2q6qua6mubkqjZY';
 
   const predefinedDestinations = [
     { name: 'París', info: 'La ciudad del amor.' },
@@ -24,7 +25,7 @@ const Travel = () => {
       try {
         for (const destination of predefinedDestinations) {
           const res = await axios.get(`https://api.unsplash.com/search/photos?query=${destination.name}&client_id=${UNSPLASH_ACCESS_KEY}`);
-          newImages[destination.name] = res.data.results[2]?.urls?.small; 
+          newImages[destination.name] = res.data.results[2]?.urls?.small;
         }
         setImages(newImages);
       } catch (error) {
@@ -42,44 +43,32 @@ const Travel = () => {
   );
 
   return (
-    <div className="p-6 font-sans">
-      <h1 className="text-3xl text-gray-800 mb-4 text-center">Destinos de Viaje</h1>
+    <div className="p-6 font-sans bg-gradient-to-r from-gray-900 to-slate-950 min-h-screen text-white animate__animated animate__fadeIn">
+      <h1 className="text-3xl mb-4 text-center animate__animated animate__fadeInDown">Destinos de Viaje</h1>
       <input
-        type="text"
-        placeholder="Buscar destinos..."
+        type=" text"
+        placeholder="Buscar destino..."
+        className="border border-gray-300 p-2 rounded mb-4 w-full"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="p-3 w-full border border-gray-300 rounded-lg mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
       {loading ? (
-        <p className="text-center">Cargando...</p>
+        <p className="text-center animate__animated animate__flash">Cargando imágenes...</p>
       ) : (
-        <div>
-          <h2 className="text-2xl text-gray-700 mb-2 text-center mt-6 p-10">Destinos Predeterminados</h2>
-          {filteredDestinations.length > 0 ? (
-            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {filteredDestinations.map((destination, index) => (
-                <li key={index} className="transition-transform transform hover:scale-105 mb-4 border border-gray-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl cursor-pointer">
-                  <div className="relative">
-                    {images[destination.name] && (
-                      <img src={images[destination.name]} alt={destination.name} className="w-full h-48 object-cover cursor-pointer" />
-                    )}
-                    <div className="absolute inset-0 bg-black opacity-30"></div>
-                    <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-xl">
-                      {destination.name}
-                    </div>
-                  </div>
-                  <h4 className="text-lg text-gray-600 mt-2 p-4">Descripción: {destination.info || 'Sin descripción'}</h4>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="text-red-500 text-center">No se encontraron destinos que coincidan con tu búsqueda.</p>
-          )}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {filteredDestinations.map((destination) => (
+            <div key={destination.name} className="border rounded-lg overflow-hidden shadow-lg animate__animated animate__zoomIn">
+              <img src={images[destination.name]} alt={destination.name} className="w-full h-48 object-cover" />
+              <div className="p-4">
+                <h2 className="text-xl font-bold">{destination.name}</h2>
+                <p className="text-gray-300">{destination.info}</p>
+              </div>
+            </div>
+          ))}
         </div>
       )}
     </div>
   );
-}
+};
 
 export default Travel;
