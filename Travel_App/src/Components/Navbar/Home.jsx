@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-// Importa las imágenes
+import { FaMap, FaLightbulb, FaImage, FaShareAlt } from 'react-icons/fa'; 
 import mapaExplorar from '../../Images/mapaExplorar.jpg'; 
 import accesorios from '../../Images/accesorios.jpg';
 import mapa from '../../Images/mapa.jpg';
@@ -25,7 +24,7 @@ function Home() {
     setTimeout(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
       setFade(true);
-    }, 300); // Tiempo de espera para la transición
+    }, 300);
   };
 
   const prevImage = () => {
@@ -33,7 +32,7 @@ function Home() {
     setTimeout(() => {
       setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
       setFade(true);
-    }, 300); // Tiempo de espera para la transición
+    }, 300);
   };
 
   return (
@@ -75,21 +74,26 @@ function Home() {
           Contáctanos
         </Link>
       </div>
+      
       <div className="mt-8 max-w-2xl text-center">
-        <h2 className="text-3xl font-bold mb-2 animate__animated animate__fadeIn animate__delay-3s">
+        <h2 className="text-4xl font-bold mb-6 animate__animated animate__fadeIn animate__delay-3s">
           ¿Qué Ofrecemos?
         </h2>
-        <ul className="list-disc list-inside space-y-2 text-left animate__animated animate__fadeIn animate__delay-4s">
-          <li className="hover:text-blue-500 transition duration-300">
+        <ul className="space-y-4 ">
+          <li className="flex items-center justify-center text-lg animate__animated animate__fadeIn animate__delay-4s">
+            <FaMap className="text-blue-500 text-2xl mr-2 animate__animated animate__bounceIn" />
             Guías de viaje para los mejores destinos.
           </li>
-          <li className="hover:text-blue-500 transition duration-300">
+          <li className="flex items-center justify-center text-lg animate__animated animate__fadeIn animate__delay-5s">
+            <FaLightbulb className="text-yellow-500 text-2xl mr-2 animate__animated animate__bounceIn" />
             Consejos útiles para tus viajes.
           </li>
-          <li className="hover:text-blue-500 transition duration-300">
+          <li className="flex items-center justify-center text-lg animate__animated animate__fadeIn animate__delay-7s">
+            <FaImage className="text-green-500 text-2xl mr-2 animate__animated animate__bounceIn" />
             Imágenes inspiradoras de diferentes lugares.
           </li>
-          <li className="hover:text-blue-500 transition duration-300">
+          <li className="flex items-center justify-center text-lg animate__animated animate__fadeIn animate__delay-8s">
+            <FaShareAlt className="text-red-500 text-2xl mr-2 animate__animated animate__bounceIn" />
             Conexiones a redes sociales para seguir nuestras actualizaciones.
           </li>
         </ul>

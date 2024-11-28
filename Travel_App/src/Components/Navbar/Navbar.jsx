@@ -1,9 +1,10 @@
+// Navbar.jsx
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { FaPlaneDeparture } from "react-icons/fa";
+import { FaPlaneDeparture, FaSun, FaMoon } from "react-icons/fa"; // Importar iconos para el modo
 import 'animate.css';
 
-function Navbar() {
+function Navbar({ toggleDarkMode, isDarkMode }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -43,22 +44,26 @@ function Navbar() {
         >
           {isOpen ? '✖' : '☰'}
         </button>
+        {/* Interruptor de Modo */}
+        <button onClick={toggleDarkMode} className="text-gray-100 focus:outline-none">
+          {isDarkMode ? <FaSun className="w-6 h-6" /> : <FaMoon className="w-6 h-6" />}
+        </button>
       </div>
       {isOpen && (
         <div className="md:hidden animate__animated animate__fadeInDown">
           <ul className="flex flex-col space-y-2 px-4 py-2">
             <li>
-              <Link to="/" className="text-gray-100 hover:text-blue-500 animate__animated animate__fadeIn">
+              <Link to="/" className="text-gray-100 hover:text-blue-500">
                 Home
               </Link>
             </li>
             <li>
-              <Link className="text-gray-100 hover:text-blue-500 animate__animated animate__fadeIn" to="/destination">
+              <Link to="/destination" className="text-gray-100 hover:text-blue-500">
                 Destination
               </Link>
             </li>
             <li>
-              <Link className="text-gray-100 hover:text-blue-500 animate__animated animate__fadeIn" to="/contact">
+              <Link to="/contact" className="text-gray-100 hover:text-blue-500">
                 Contact
               </Link>
             </li>

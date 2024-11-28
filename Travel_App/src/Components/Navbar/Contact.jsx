@@ -1,3 +1,4 @@
+// Contact.jsx
 import React, { useState } from 'react';
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaLinkedin } from 'react-icons/fa';
 import { BsGithub } from "react-icons/bs";
@@ -14,7 +15,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-//aqui se agregara la logica del formulario
+    // Aquí se agregará la lógica del formulario
     setSubmitted(true);
   };
 
@@ -84,7 +85,7 @@ const Contact = () => {
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-600 transition-transform transform hover:scale-110">
             <FaTwitter size={30} />
           </a>
-          <a href="https://www .youtube.com" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-800 transition-transform transform hover:scale-110">
+          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:text-red-800 transition-transform transform hover:scale-110">
             <FaYoutube size={30} />
           </a>
         </div>
