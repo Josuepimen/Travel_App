@@ -42,10 +42,10 @@ const Travel = () => {
   );
 
   return (
-    <div className="p-6 font-sans bg-gradient-to-r from-gray-900 to-slate-950 min-h-screen text-white animate__animated animate__fadeIn">
+    <div className="p-6 font-sans min-h-screen animate__animated animate__fadeIn">
       <h1 className="text-3xl mb-4 text-center animate__animated animate__fadeInDown">Destinos de Viaje</h1>
       <input
-        type=" text"
+        type="text"
         placeholder="Buscar destino..."
         className="border border-gray-500 p-2 rounded mb-4 w-full bg-gray-900"
         value={searchTerm}
@@ -56,11 +56,11 @@ const Travel = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredDestinations.map((destination) => (
-            <div key={destination.name} className="border rounded-lg overflow-hidden shadow-lg animate__animated animate__zoomIn">
+            <div key={destination.name} className=" rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105">
               <img src={images[destination.name]} alt={destination.name} className="w-full h-48 object-cover cursor-pointer" />
               <div className="p-4">
                 <h2 className="text-xl font-bold">{destination.name}</h2>
-                <p className="text-gray-300">{destination.info}</p>
+                <p>{destination.info}</p>
               </div>
             </div>
           ))}

@@ -1,11 +1,12 @@
-// Navbar.jsx
+
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { FaPlaneDeparture, FaSun, FaMoon } from "react-icons/fa"; // Importar iconos para el modo
+import { FaPlaneDeparture, FaSun, FaMoon } from "react-icons/fa"; 
 import 'animate.css';
 
 function Navbar({ toggleDarkMode, isDarkMode }) {
   const [isOpen, setIsOpen] = useState(false);
+  console.log("modo oscuro:", !isDarkMode);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -44,7 +45,7 @@ function Navbar({ toggleDarkMode, isDarkMode }) {
         >
           {isOpen ? '✖' : '☰'}
         </button>
-        {/* Interruptor de Modo */}
+        {/* Interruptor de Modo claro y dark */}
         <button onClick={toggleDarkMode} className="text-gray-100 focus:outline-none">
           {isDarkMode ? <FaSun className="w-6 h-6" /> : <FaMoon className="w-6 h-6" />}
         </button>

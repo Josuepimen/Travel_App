@@ -1,4 +1,4 @@
-// Contact.jsx
+
 import React, { useState } from 'react';
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube, FaLinkedin } from 'react-icons/fa';
 import { BsGithub } from "react-icons/bs";
@@ -15,19 +15,19 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí se agregará la lógica del formulario
+    // Aquí en un futuro agregare la logica del formulario ese
     setSubmitted(true);
   };
 
   return (
-    <div className="p-6 font-sans bg-gradient-to-r from-gray-900 to-slate-950 min-h-screen text-white animate__animated animate__fadeIn">
-      <h1 className="text-3xl text-gray-100 mb-4 text-center animate__animated animate__fadeInDown">Contacto</h1>
+    <div className="p-6 font-sans min-h-screen  animate__animated animate__fadeIn">
+      <h1 className="text-3xl  mb-4 text-center animate__animated animate__fadeInDown">Contacto</h1>
       {submitted ? (
         <p className="text-center text-3xl text-green-500 animate__animated animate__bounce mt-10 mb-10">¡Gracias por tu mensaje!</p>
       ) : (
         <form onSubmit={handleSubmit} className="max-w-md mx-auto">
           <div className="mb-4">
-            <label className="block text-gray-100 mb-2" htmlFor="name">Nombre</label>
+            <label className="block  mb-2" htmlFor="name">Nombre</label>
             <input
               type="text"
               name="name"
@@ -39,7 +39,7 @@ const Contact = () => {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-100 mb-2" htmlFor="email">Email</label>
+            <label className="block  mb-2" htmlFor="email">Email</label>
             <input 
               type="email"
               name="email"
@@ -51,7 +51,7 @@ const Contact = () => {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-100 mb-2" htmlFor="message">Mensaje</label>
+            <label className="block  mb-2" htmlFor="message">Mensaje</label>
             <textarea
               name="message"
               id="message"
@@ -61,14 +61,14 @@ const Contact = () => {
               required
             />
           </div>
-          <button type="submit" className="bg-blue-600 text-white p-2 rounded w-full hover:bg-blue-700 animate__animated animate__pulse">
+          <button type="submit" className="bg-blue-600  p-2 rounded w-full hover:bg-blue-700 animate__animated animate__pulse">
             Enviar
           </button>
         </form>
       )}
 
       <div className="flex flex-col items-center justify-center mt-6 bg-gray-900 rounded-lg shadow-md p-4 animate__animated animate__fadeInUp">
-        <h2 className="text-2xl font-bold mb-4">Síguenos en Redes Sociales</h2>
+        <h2 className="text-2xl font-bold mb-4 text-white">Síguenos en Redes Sociales</h2>
         <div className="flex space-x-4">
           <a href="https://github.com/Josuepimen" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-zinc-300 transition-transform transform hover:scale-110">
             <BsGithub size={30} />

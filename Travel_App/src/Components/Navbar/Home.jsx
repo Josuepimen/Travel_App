@@ -36,7 +36,7 @@ function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-r from-gray-900 to-slate-950 min-h-screen text-white">
+    <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-r min-h-screen ">
       <h1 className="text-5xl font-bold mb-4 animate__animated animate__fadeInDown">
         Bienvenido a nuestra App de Viajes
       </h1>
@@ -63,13 +63,13 @@ function Home() {
       <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
         <Link
           to="/destination"
-          className="bg-blue-600 text-zinc-100 py-3 px-6 rounded-lg shadow-lg hover:bg-blue-800 hover:text-white transition duration-300 transform hover:scale-105 animate__animated animate__fadeIn animate__delay-2s"
+          className="bg-blue-600 text-zinc-100 py-3 px-6 rounded-lg shadow-lg text-center hover:bg-blue-800 hover:text-white transition duration-300 transform hover:scale-105 animate__animated animate__fadeIn animate__delay-2s"
         >
           Explorar Destinos
         </Link>
         <Link
           to="/contact"
-          className="bg-green-600 text-zinc-100 py-3 px-6 rounded-lg shadow-lg hover:bg-green-700 hover:text-white transition duration-300 transform hover:scale-105 animate__animated animate__fadeIn animate__delay-2s"
+          className="bg-green-600 text-zinc-100 py-3 px-6 rounded-lg shadow-lg text-center hover:bg-green-700 hover:text-white transition duration-300 transform hover:scale-105 animate__animated animate__fadeIn animate__delay-2s"
         >
           Contáctanos
         </Link>
