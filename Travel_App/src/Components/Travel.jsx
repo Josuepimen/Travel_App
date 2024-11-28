@@ -4,7 +4,6 @@ import 'animate.css';
 
 const Travel = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [destinations, setDestinations] = useState([]);
   const [images, setImages] = useState({});
   const [loading, setLoading] = useState(false);
 
@@ -48,7 +47,7 @@ const Travel = () => {
       <input
         type=" text"
         placeholder="Buscar destino..."
-        className="border border-gray-300 p-2 rounded mb-4 w-full"
+        className="border border-gray-500 p-2 rounded mb-4 w-full bg-gray-900"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
@@ -58,7 +57,7 @@ const Travel = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredDestinations.map((destination) => (
             <div key={destination.name} className="border rounded-lg overflow-hidden shadow-lg animate__animated animate__zoomIn">
-              <img src={images[destination.name]} alt={destination.name} className="w-full h-48 object-cover" />
+              <img src={images[destination.name]} alt={destination.name} className="w-full h-48 object-cover cursor-pointer" />
               <div className="p-4">
                 <h2 className="text-xl font-bold">{destination.name}</h2>
                 <p className="text-gray-300">{destination.info}</p>

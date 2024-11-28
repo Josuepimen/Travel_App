@@ -22,7 +22,7 @@ const Contact = () => {
     <div className="p-6 font-sans bg-gradient-to-r from-gray-900 to-slate-950 min-h-screen text-white animate__animated animate__fadeIn">
       <h1 className="text-3xl text-gray-100 mb-4 text-center animate__animated animate__fadeInDown">Contacto</h1>
       {submitted ? (
-        <p className="text-center text-green-500 animate__animated animate__bounce">¡Gracias por tu mensaje!</p>
+        <p className="text-center text-3xl text-green-500 animate__animated animate__bounce mt-10 mb-10">¡Gracias por tu mensaje!</p>
       ) : (
         <form onSubmit={handleSubmit} className="max-w-md mx-auto">
           <div className="mb-4">
