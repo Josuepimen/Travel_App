@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { FaPlaneDeparture, FaSun, FaMoon } from "react-icons/fa"; 
@@ -17,7 +16,7 @@ function Navbar({ toggleDarkMode, isDarkMode }) {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="text-xl font-bold text-gray-100">
           <Link to="/">
-            <FaPlaneDeparture className='w-10 h-10 animate__animated animate__bounceIn' />
+            <FaPlaneDeparture className='w-10 h-10 animate__animated animate__bounceIn ' />
           </Link>
         </div>
         <div className="hidden md:flex space-x-8">
@@ -45,7 +44,6 @@ function Navbar({ toggleDarkMode, isDarkMode }) {
         >
           {isOpen ? '✖' : '☰'}
         </button>
-        {/* Interruptor de Modo claro y dark */}
         <button onClick={toggleDarkMode} className="text-gray-100 focus:outline-none">
           {isDarkMode ? <FaSun className="w-6 h-6" /> : <FaMoon className="w-6 h-6" />}
         </button>

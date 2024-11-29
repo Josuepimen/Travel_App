@@ -37,7 +37,7 @@ function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center p-6 bg-gradient-to-r min-h-screen ">
-      <h1 className="text-5xl font-bold mb-4 animate__animated animate__fadeInDown">
+      <h1 className="text-5xl font-bold mb-4 animate__animated animate__fadeInDown text-center">
         Bienvenido a nuestra App de Viajes
       </h1>
       <p className="text-lg text-center mb-6 animate__animated animate__fadeIn animate__delay-1s">
@@ -45,7 +45,7 @@ function Home() {
         tu próxima aventura con nosotros.
       </p>
 
-      {/* Sección de imágenes como slider */}
+{/* imagenes como slider */}
       <div className="relative w-full max-w-lg mb-8">
         <img
           src={images[currentIndex].src}
