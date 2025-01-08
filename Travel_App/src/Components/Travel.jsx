@@ -15,6 +15,25 @@ const Travel = () => {
     { name: 'Tokio', info: 'La capital de Japón.' },
     { name: 'Londres', info: 'La capital de Inglaterra.' },
     { name: 'Sídney', info: 'Famosa por su ópera.' },
+    { name: 'Caracas', info: 'La Ciudad del Libertador' },
+    { name: 'Merida', info: 'Es conocida por su arquitectura colonial española'},
+    { name: 'Nueva Esparta', info: 'Conocido por su alto nivel de Turismo'},
+    { name: 'San Cristobal', info: 'San Cristóbal es una ciudad venezolana'},
+    { name: 'Barcelona', info: 'Barcelona ​​ es una ciudad ubicada en el noreste de Venezuela '},
+    { name: 'Maracay', info: '' },
+    { name: 'Barquisimeto', info: '' },
+    { name: 'Miranda', info: '' },
+    { name: 'Apure', info: '' },
+    { name: 'Washinton D.C', info: 'Capital de EE.UU' },
+    { name: 'Hong Kong', info: '' },
+    { name: 'Hiroshima', info: '' },
+    { name: 'Egipto', info: '' },
+    { name: 'Turquia ', info: '' },
+    { name: 'Berlin', info: '' },
+    { name: '', info: '' },
+    { name: 'Afganistan', info: '' },
+    { name: 'Russia', info: '' },
+  
   ];
 
   useEffect(() => {
@@ -57,7 +76,7 @@ const Travel = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredDestinations.map((destination) => (
             <div key={destination.name} className=" rounded-lg overflow-hidden shadow-lg transition-transform duration-300 transform hover:scale-105">
-              <img src={images[destination.name]} alt={destination.name} className="w-full h-48 object-cover cursor-pointer" />
+              <img src={images[destination.name]} alt={destination.name}  onChange={(e) => setSearchTerm(e.target.value)}  className="w-full h-48 object-cover cursor-pointer rounded-lg" />
               <div className="p-4">
                 <h2 className="text-xl font-bold">{destination.name}</h2>
                 <p>{destination.info}</p>
