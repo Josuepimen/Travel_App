@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'animate.css';
 
-const Travel = () => {
+const Travel = ({ isDarkMode }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [images, setImages] = useState({});
   const [loading, setLoading] = useState(false);
@@ -90,12 +90,12 @@ const Travel = () => {
   );
 
   return (
-    <div className="p-6 font-sans min-h-screen animate__animated animate__fadeIn">
+    <div className={`p-6 font-sans min-h-screen animate__animated animate__fadeIn ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
       <h1 className="text-3xl mb-4 text-center animate__animated animate__fadeInDown">Destinos de Viaje</h1>
       <input
         type="text"
         placeholder="Buscar destino..."
-        className="border border-gray-500 p-2 rounded mb-4 w-full bg-gray-900"
+        className={`border p-2 rounded mb-4 w-full ${isDarkMode ? 'border-gray-500 bg-gray-800 text-white' : 'border-gray-500 bg-gray-200 text-black'}`}
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
@@ -122,7 +122,7 @@ const Travel = () => {
 
       {selectedDestination && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center animate__animated animate__fadeIn">
-          <div className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full md:max-w-2xl lg:max-w-4xl animate__animated animate__zoomIn">
+          <div className={`p-6 rounded-lg shadow-lg max-w-lg w-full md:max-w-2xl lg:max-w-4xl animate__animated animate__zoomIn ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>
             <h2 className="text-2xl font-bold mb-4">{selectedDestination.name}</h2>
             <p className="mb-4">{selectedDestination.info}</p>
             <p className="mb-4">{selectedDestination.description}</p>

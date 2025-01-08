@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from "./Components/Navbar/Home";
@@ -22,7 +21,7 @@ function App() {
         <div className="mt-16">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/destination" element={<Travel />} />
+            <Route path="/destination" element={<Travel isDarkMode={isDarkMode} />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
